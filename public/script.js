@@ -1,79 +1,3 @@
-// Simulación de base de datos de usuarios
-let users = JSON.parse(localStorage.getItem("users")) || [];
-
-// Seleccionar elementos
-const loginSection = document.getElementById("login-section");
-const registerSection = document.getElementById("register-section");
-const orderSection = document.getElementById("order-section");
-const loginForm = document.getElementById("login-form");
-const registerForm = document.getElementById("register-form");
-const loginLink = document.getElementById("login-link");
-const registerLink = document.getElementById("register-link");
-const serviceSelect = document.getElementById("service");
-const serviceDetails = document.getElementById("service-details");
-const processTime = document.getElementById("process-time");
-const orderForm = document.getElementById("order-form");
-const totalDisplay = document.getElementById("total");
-
-// Ocultar las secciones de registro y orden al cargar la página
-registerSection.style.display = "none";
-orderSection.style.display = "none";
-
-// Mostrar formulario de registro
-registerLink.addEventListener("click", (e) => {
-  e.preventDefault();
-  loginSection.style.display = "none";
-  registerSection.style.display = "block";
-});
-
-// Mostrar formulario de login
-loginLink.addEventListener("click", (e) => {
-  e.preventDefault();
-  registerSection.style.display = "none";
-  loginSection.style.display = "block";
-});
-
-// Registrar nuevo usuario
-registerForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const email = document.getElementById("register-email").value;
-  const password = document.getElementById("register-password").value;
-
-  // Verificar si el usuario ya existe
-  const userExists = users.some(user => user.email === email);
-  if (userExists) {
-    alert("El correo electrónico ya está registrado.");
-    return;
-  }
-
-  // Guardar el nuevo usuario
-  users.push({ email, password });
-  localStorage.setItem("users", JSON.stringify(users));
-
-  alert("Registro exitoso. Inicia sesión para continuar.");
-  registerSection.style.display = "none";
-  loginSection.style.display = "block";
-});
-
-// Iniciar sesión
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const email = document.getElementById("login-email").value;
-  const password = document.getElementById("login-password").value;
-
-  // Verificar credenciales
-  const user = users.find(user => user.email === email && user.password === password);
-  if (user) {
-    alert("Inicio de sesión exitoso.");
-    loginSection.style.display = "none";
-    orderSection.style.display = "block";
-  } else {
-    alert("Correo electrónico o contraseña incorrectos.");
-  }
-});
-
 // Datos de los servicios con precios, indicaciones y tiempo de proceso
 const services = {
   "Unlock Tool": {
@@ -117,6 +41,13 @@ const services = {
     price: { USDT: 10, MXN: 200, GTQ: 90 },
   },
 };
+
+// Seleccionar elementos
+const serviceSelect = document.getElementById("service");
+const serviceDetails = document.getElementById("service-details");
+const processTime = document.getElementById("process-time");
+const orderForm = document.getElementById("order-form");
+const totalDisplay = document.getElementById("total");
 
 // Mostrar detalles del servicio seleccionado
 serviceSelect.addEventListener("change", () => {
