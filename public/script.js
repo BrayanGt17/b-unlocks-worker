@@ -15,6 +15,10 @@ const processTime = document.getElementById("process-time");
 const orderForm = document.getElementById("order-form");
 const totalDisplay = document.getElementById("total");
 
+// Ocultar las secciones de registro y orden al cargar la página
+registerSection.style.display = "none";
+orderSection.style.display = "none";
+
 // Mostrar formulario de registro
 registerLink.addEventListener("click", (e) => {
   e.preventDefault();
