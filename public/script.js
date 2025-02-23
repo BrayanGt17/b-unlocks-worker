@@ -30,7 +30,6 @@ window.addEventListener("click", (event) => {
     frpModal.style.display = "none";
   }
 });
-
 // Calcular el total a pagar para AMT
 const creditsInput = document.getElementById("credits");
 const currencySelect = document.getElementById("currency");

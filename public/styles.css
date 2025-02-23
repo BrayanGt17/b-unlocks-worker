@@ -125,7 +125,7 @@ body {
   }
   
   /* Estilos para las ventanas modales */
-  .modal {
+.modal {
     display: none; /* Ocultar por defecto */
     position: fixed;
     top: 0;
@@ -144,6 +144,8 @@ body {
     border-radius: 10px;
     max-width: 500px;
     width: 90%;
+    max-height: 80vh; /* Altura máxima del contenido */
+    overflow-y: auto; /* Desplazamiento vertical si el contenido es muy largo */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
   }
