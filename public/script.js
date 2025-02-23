@@ -1,35 +1,27 @@
-// Seleccionar elementos
-const amtTable = document.getElementById("amt-table");
-const frpTable = document.getElementById("frp-table");
-const amtModal = document.getElementById("amt-modal");
-const frpModal = document.getElementById("frp-modal");
-const closeBtns = document.querySelectorAll(".close");
+// Cambiar entre pestañas
+const tabLinks = document.querySelectorAll(".tab-link");
 
-// Mostrar modal de Android Multi Tool
-amtTable.addEventListener("click", () => {
-  amtModal.style.display = "flex";
-});
+tabLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    const tabId = link.getAttribute("data-tab");
+    const tabContent = document.getElementById(tabId);
 
-// Mostrar modal de FRP Samsung By IMEI
-frpTable.addEventListener("click", () => {
-  frpModal.style.display = "flex";
-});
+    // Ocultar todas las pestañas
+    document.querySelectorAll(".tab-content").forEach(content => {
+      content.classList.remove("active");
+    });
 
-// Cerrar modales
-closeBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    amtModal.style.display = "none";
-    frpModal.style.display = "none";
+    // Desactivar todos los botones
+    tabLinks.forEach(link => {
+      link.classList.remove("active");
+    });
+
+    // Mostrar la pestaña seleccionada
+    tabContent.classList.add("active");
+    link.classList.add("active");
   });
 });
 
-// Cerrar modales al hacer clic fuera del contenido
-window.addEventListener("click", (event) => {
-  if (event.target === amtModal || event.target === frpModal) {
-    amtModal.style.display = "none";
-    frpModal.style.display = "none";
-  }
-});
 // Calcular el total a pagar para AMT
 const creditsInput = document.getElementById("credits");
 const currencySelect = document.getElementById("currency");
