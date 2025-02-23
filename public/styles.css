@@ -116,11 +116,11 @@ form {
 
 .process-time {
   background-color: #fff3cd; /* Fondo amarillo */
-  padding: 5px; /* Reducido de 10px a 8px */
-  border-radius: 1px;
+  padding: 3px; /* Reducido de 10px a 8px */
+  border-radius: 0px;
   border: 1px solid #ffeeba;
   text-align: center;
-  margin: 10px 0; /* Reducido de 20px a 10px */
+  margin: 5px 0; /* Reducido de 20px a 10px */
   font-weight: bold;
   font-size: 0.5em; /* Tamaño de fuente ligeramente más pequeño */
 }
