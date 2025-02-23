@@ -126,7 +126,7 @@ const services = {
   "FRP XIAOMI": {
     description: "XIAOMI FRP/RESET",
     instructions: "⚠️ Proporciona el IMEI del dispositivo y la red actual.",
-    processTime: "⏰ Tiempo de proceso: 24-48 horas (días hábiles).",
+    processTime: "⏰1-5 minutos.",
     fields: [
       { type: "text", label: "IMEI del dispositivo", placeholder: "Ej: 123456789012345" },
       { type: "select", label: "Moneda", options: ["USDT", "MXN", "GTQ"] },
