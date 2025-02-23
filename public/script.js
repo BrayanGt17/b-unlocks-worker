@@ -1,19 +1,34 @@
 // Seleccionar elementos
 const amtTable = document.getElementById("amt-table");
 const frpTable = document.getElementById("frp-table");
-const amtSection = document.getElementById("amt-section");
-const frpSection = document.getElementById("frp-section");
+const amtModal = document.getElementById("amt-modal");
+const frpModal = document.getElementById("frp-modal");
+const closeBtns = document.querySelectorAll(".close");
 
-// Mostrar sección de Android Multi Tool
+// Mostrar modal de Android Multi Tool
 amtTable.addEventListener("click", () => {
-  amtSection.style.display = "block";
-  frpSection.style.display = "none"; // Ocultar la otra sección
+  amtModal.style.display = "flex";
 });
 
-// Mostrar sección de FRP Samsung By IMEI
+// Mostrar modal de FRP Samsung By IMEI
 frpTable.addEventListener("click", () => {
-  frpSection.style.display = "block";
-  amtSection.style.display = "none"; // Ocultar la otra sección
+  frpModal.style.display = "flex";
+});
+
+// Cerrar modales
+closeBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    amtModal.style.display = "none";
+    frpModal.style.display = "none";
+  });
+});
+
+// Cerrar modales al hacer clic fuera del contenido
+window.addEventListener("click", (event) => {
+  if (event.target === amtModal || event.target === frpModal) {
+    amtModal.style.display = "none";
+    frpModal.style.display = "none";
+  }
 });
 
 // Calcular el total a pagar para AMT
