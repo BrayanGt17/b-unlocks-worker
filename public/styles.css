@@ -1,162 +1,94 @@
 /* Estilos base */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin: 20px 0;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin: 20px 0;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input, .input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para móviles */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
   }
-  
-  main {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .logo {
-    width: 150px;
-    height: auto;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin: 20px 0 10px;
-    text-align: center;
-  }
-  
-  .pricing-tables {
-    width: 100%;
-    overflow-x: auto;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin-bottom: 30px;
-    cursor: pointer;
-  }
-  
-  th, td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #007BFF;
-    color: white;
-    font-weight: bold;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
   .btn {
-    display: inline-block;
-    background-color: #007BFF;
-    color: white;
-    padding: 15px 20px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Estilos para pestañas */
-  .tabs {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .tab-header {
-    display: flex;
-    background-color: #f1f1f1;
-  }
-  
-  .tab-link {
-    flex: 1;
-    padding: 15px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    background-color: transparent;
-  }
-  
-  .tab-link.active {
-    background-color: #007BFF;
-    color: white;
-  }
-  
-  .tab-content {
-    display: none;
-    padding: 20px;
-    background-color: white;
-  }
-  
-  .tab-content.active {
-    display: block;
-  }
-  
-  .input-group {
-    margin: 20px 0;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .input-group input, .input-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     font-size: 1rem;
+    padding: 12px 16px;
   }
-  
-  #total, #frp-total {
-    color: #007BFF;
-    font-weight: bold;
-  }
-  
-  /* Estilos para móviles */
-  @media (max-width: 600px) {
-    h2 {
-      font-size: 1.5rem;
-    }
-    table {
-      font-size: 0.9rem;
-    }
-    th, td {
-      padding: 10px;
-    }
-    .btn {
-      font-size: 1rem;
-      padding: 12px 16px;
-    }
-  }
+}
