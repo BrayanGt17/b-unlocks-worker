@@ -141,6 +141,30 @@ const processTime = document.getElementById("process-time");
 const orderForm = document.getElementById("order-form");
 const totalDisplay = document.getElementById("total");
 
+// Mostrar la sección de servicios al hacer clic en "Servicios" en el menú
+document.querySelector('a[href="#servicios"]').addEventListener('click', (e) => {
+  e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+  document.getElementById('servicios').style.display = 'block'; // Muestra la sección de servicios
+  document.getElementById('inicio').style.display = 'none'; // Oculta la sección de inicio
+  document.getElementById('contacto').style.display = 'none'; // Oculta la sección de contacto
+});
+
+// Mostrar la sección de inicio al hacer clic en "Inicio" en el menú
+document.querySelector('a[href="#inicio"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('inicio').style.display = 'block';
+  document.getElementById('servicios').style.display = 'none';
+  document.getElementById('contacto').style.display = 'none';
+});
+
+// Mostrar la sección de contacto al hacer clic en "Contacto" en el menú
+document.querySelector('a[href="#contacto"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('contacto').style.display = 'block';
+  document.getElementById('inicio').style.display = 'none';
+  document.getElementById('servicios').style.display = 'none';
+});
+
 // Mostrar detalles del servicio seleccionado
 serviceSelect.addEventListener("change", () => {
   const selectedService = serviceSelect.value;
@@ -203,29 +227,7 @@ serviceSelect.addEventListener("change", () => {
     inputGroup.appendChild(input);
     serviceDetails.appendChild(inputGroup);
   });
-// Mostrar la sección de servicios al hacer clic en "Servicios" en el menú
-document.querySelector('a[href="#servicios"]').addEventListener('click', (e) => {
-  e.preventDefault(); // Evita el comportamiento predeterminado del enlace
-  document.getElementById('servicios').style.display = 'block'; // Muestra la sección de servicios
-  document.getElementById('inicio').style.display = 'none'; // Oculta la sección de inicio
-  document.getElementById('contacto').style.display = 'none'; // Oculta la sección de contacto
-});
 
-// Mostrar la sección de inicio al hacer clic en "Inicio" en el menú
-document.querySelector('a[href="#inicio"]').addEventListener('click', (e) => {
-  e.preventDefault();
-  document.getElementById('inicio').style.display = 'block';
-  document.getElementById('servicios').style.display = 'none';
-  document.getElementById('contacto').style.display = 'none';
-});
-
-// Mostrar la sección de contacto al hacer clic en "Contacto" en el menú
-document.querySelector('a[href="#contacto"]').addEventListener('click', (e) => {
-  e.preventDefault();
-  document.getElementById('contacto').style.display = 'block';
-  document.getElementById('inicio').style.display = 'none';
-  document.getElementById('servicios').style.display = 'none';
-});
   // Calcular el total inicial
   calculateTotal();
 });
