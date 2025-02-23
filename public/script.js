@@ -114,7 +114,6 @@ const services = {
         <li>❌ SM-A055M</li>
         <li>❌ SM-A055F</li>
       </ul>
-      
     `,
     processTime: "⏰1-5 minutos .",
     fields: [
@@ -150,6 +149,8 @@ serviceSelect.addEventListener("change", () => {
   // Limpiar detalles anteriores
   serviceDetails.innerHTML = "";
   processTime.innerHTML = "";
+
+  if (!service) return; // Si no hay servicio seleccionado, salir
 
   // Mostrar descripción del servicio
   const description = document.createElement("p");
@@ -212,6 +213,11 @@ function calculateTotal() {
   const selectedService = serviceSelect.value;
   const service = services[selectedService];
   let total = 0;
+
+  if (!service) {
+    totalDisplay.textContent = total;
+    return;
+  }
 
   if (selectedService === "Unlock Tool") {
     const licenseSelect = serviceDetails.querySelector("select");
