@@ -82,6 +82,11 @@ form {
   background-color: #0056b3;
 }
 
+#total {
+  color: #007BFF;
+  font-weight: bold;
+}
+
 /* Estilos para móviles */
 @media (max-width: 600px) {
   h1 {
