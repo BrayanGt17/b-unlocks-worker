@@ -1,36 +1,3 @@
-// JavaScript para manejar las ventanas flotantes
-const amtModal = document.getElementById("amt-modal");
-const frpModal = document.getElementById("frp-modal");
-const amtTable = document.getElementById("amt-table");
-const frpTable = document.getElementById("frp-table");
-const closeBtns = document.querySelectorAll(".close");
-
-// Abrir modal de Android Multi Tool
-amtTable.addEventListener("click", () => {
-  amtModal.style.display = "block";
-});
-
-// Abrir modal de FRP Samsung
-frpTable.addEventListener("click", () => {
-  frpModal.style.display = "block";
-});
-
-// Cerrar modales
-closeBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    amtModal.style.display = "none";
-    frpModal.style.display = "none";
-  });
-});
-
-// Cerrar modales al hacer clic fuera del contenido
-window.addEventListener("click", (event) => {
-  if (event.target === amtModal || event.target === frpModal) {
-    amtModal.style.display = "none";
-    frpModal.style.display = "none";
-  }
-});
-
 // Calcular el total a pagar para AMT
 const creditsInput = document.getElementById("credits");
 const currencySelect = document.getElementById("currency");
