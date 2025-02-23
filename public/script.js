@@ -1,8 +1,9 @@
-// Datos de los servicios con precios e indicaciones
+// Datos de los servicios con precios, indicaciones y tiempo de proceso
 const services = {
   "Unlock Tool": {
     description: "Desbloqueo de dispositivos",
     instructions: "⚠️ Es necesario registrarse primero en la página oficial de <a href='https://unlocktool.net' target='_blank'>unlocktool.net</a>.",
+    processTime: "⏰ Tiempo de proceso: 24-48 horas (días hábiles).",
     fields: [
       { type: "email", label: "Correo registrado", placeholder: "ejemplo@correo.com" },
       { type: "text", label: "Usuario registrado", placeholder: "Tu usuario en Unlock Tool" },
@@ -21,6 +22,7 @@ const services = {
   "Android Multi Tool": {
     description: "Créditos para Android Multi Tool",
     instructions: "⚠️ Es necesario registrarse primero en la página oficial de <a href='https://androidmultitool.com' target='_blank'>androidmultitool.com</a>.",
+    processTime: "⏰ Tiempo de proceso: 12-24 horas (días hábiles).",
     fields: [
       { type: "email", label: "Correo registrado", placeholder: "ejemplo@correo.com" },
       { type: "number", label: "Cantidad de créditos", placeholder: "Ej: 10", min: 1 },
@@ -31,6 +33,7 @@ const services = {
   "FRP Samsung By IMEI": {
     description: "Desbloqueo FRP Samsung por IMEI",
     instructions: "⚠️ Antes de ordenar, realiza un <strong>Hard Reset</strong> y desconecta el dispositivo de Wi-Fi.",
+    processTime: "⏰ Tiempo de proceso: 1-2 horas (días hábiles).",
     fields: [
       { type: "text", label: "IMEI o SN del dispositivo", placeholder: "Ej: 123456789012345" },
       { type: "select", label: "Moneda", options: ["USDT", "MXN", "GTQ"] },
@@ -42,6 +45,7 @@ const services = {
 // Seleccionar elementos
 const serviceSelect = document.getElementById("service");
 const serviceDetails = document.getElementById("service-details");
+const processTime = document.getElementById("process-time");
 const orderForm = document.getElementById("order-form");
 const totalDisplay = document.getElementById("total");
 
@@ -52,6 +56,7 @@ serviceSelect.addEventListener("change", () => {
 
   // Limpiar detalles anteriores
   serviceDetails.innerHTML = "";
+  processTime.innerHTML = "";
 
   // Mostrar descripción del servicio
   const description = document.createElement("p");
@@ -67,6 +72,12 @@ serviceSelect.addEventListener("change", () => {
   instructions.style.borderRadius = "5px";
   instructions.style.border = "1px solid #ffeeba";
   serviceDetails.appendChild(instructions);
+
+  // Mostrar tiempo de proceso
+  const time = document.createElement("div");
+  time.className = "process-time";
+  time.innerHTML = service.processTime;
+  processTime.appendChild(time);
 
   // Mostrar campos del servicio
   service.fields.forEach(field => {
