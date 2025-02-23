@@ -3,7 +3,7 @@ const services = {
   "Unlock Tool": {
     description: "Desbloqueo de dispositivos",
     instructions: "⚠️ Es necesario registrarse primero en la página oficial de <a href='https://unlocktool.net' target='_blank'>unlocktool.net</a>.",
-    processTime: "⏰ Tiempo de proceso: 24-48 horas (días hábiles).",
+    processTime: "⏰1-6 Horas",
     fields: [
       { type: "email", label: "Correo registrado", placeholder: "ejemplo@correo.com" },
       { type: "text", label: "Usuario registrado", placeholder: "Tu usuario en Unlock Tool" },
@@ -40,7 +40,7 @@ const services = {
         <a href="https://androidmultitool.com/supported_models/" target="_blank">Ver modelos compatibles</a>
       </p>
     `,
-    processTime: "⏰ Tiempo de proceso: 12-24 horas (días hábiles).",
+    processTime: "⏰1-5 Minutos.",
     fields: [
       { type: "email", label: "Correo registrado", placeholder: "ejemplo@correo.com" },
       { type: "number", label: "Cantidad de créditos", placeholder: "Ej: 10", min: 1 },
@@ -78,7 +78,7 @@ const services = {
       </ul>
       <p><strong>NO SOPORTA EQUIPOS CON REPORTE DE ROBO, KNOX, PAYJOY, KG.</strong></p>
     `,
-    processTime: "⏰ Tiempo de proceso: 1-5 minutos .",
+    processTime: "⏰1-5 minutos .",
     fields: [
       { type: "text", label: "IMEI o SN del dispositivo", placeholder: "Ej: 123456789012345" },
       { type: "select", label: "Moneda", options: ["USDT", "MXN", "GTQ"] },
@@ -89,6 +89,7 @@ const services = {
     description: "Desbloqueo FRP Samsung por IMEI",
     instructions: `
       <p><strong>RECUERDE QUE NO ES NECESARIO CONECTARLO A LA PC.</strong></p>
+      <p><strong>SI SOPORTA EQUIPOS CON REPORTE DE ROBO, KNOX, PAYJOY, KG.</strong></p>
       <ol>
         <li>Antes de ordenar, realiza un <strong>Hard Reset</strong> y desconecta el dispositivo de Wi-Fi.</li>
         <li>Proporciona el IMEI o SN del dispositivo.</li>
@@ -113,17 +114,17 @@ const services = {
         <li>❌ SM-A055M</li>
         <li>❌ SM-A055F</li>
       </ul>
-      <p><strong>SI SOPORTA EQUIPOS CON REPORTE DE ROBO, KNOX, PAYJOY, KG.</strong></p>
+      
     `,
-    processTime: "⏰ Tiempo de proceso: 1-5 minutos .",
+    processTime: "⏰1-5 minutos .",
     fields: [
       { type: "text", label: "IMEI o SN del dispositivo", placeholder: "Ej: 123456789012345" },
       { type: "select", label: "Moneda", options: ["USDT", "MXN", "GTQ"] },
     ],
     price: { USDT: 15, MXN: 250, GTQ: 100 },
   },
-  "Network Unlock": {
-    description: "Desbloqueo de red",
+  "FRP XIAOMI": {
+    description: "XIAOMI FRP/RESET",
     instructions: "⚠️ Proporciona el IMEI del dispositivo y la red actual.",
     processTime: "⏰ Tiempo de proceso: 24-48 horas (días hábiles).",
     fields: [
@@ -230,7 +231,7 @@ function calculateTotal() {
       const currency = currencySelect.value;
       total = credits * service.pricePerCredit[currency];
     }
-  } else if (selectedService === "FRP Samsung By IMEI" || selectedService === "FRP Sam2" || selectedService === "Network Unlock") {
+  } else if (selectedService === "FRP Samsung By IMEI" || selectedService === "FRP Sam2" || selectedService === "FRP XIAOMI") {
     const currencySelect = serviceDetails.querySelector("select");
     if (currencySelect) {
       const currency = currencySelect.value;
