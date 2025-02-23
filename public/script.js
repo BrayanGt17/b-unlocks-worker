@@ -85,23 +85,42 @@ const services = {
     ],
     price: { USDT: 10, MXN: 200, GTQ: 90 },
   },
-  "iCloud Unlock": {
-    description: "Desbloqueo de iCloud",
+  "FRP sam2": {
+    description: "Desbloqueo FRP Samsung por IMEI",
     instructions: `
       <p><strong>RECUERDE QUE NO ES NECESARIO CONECTARLO A LA PC.</strong></p>
       <ol>
         <li>Antes de ordenar, realiza un <strong>Hard Reset</strong> y desconecta el dispositivo de Wi-Fi.</li>
-        <li>Proporciona el IMEI del dispositivo.</li>
-        <li>Verifica bien el IMEI antes de ordenar.</li>
+        <li>Proporciona el IMEI o SN del dispositivo.</li>
+        <li>Verifica bien el IMEI/SN Antes de ordenar.</li>
       </ol>
-      <p><strong>NO SOPORTA EQUIPOS CON REPORTE DE ROBO, KNOX, PAYJOY, KG.</strong></p>
+      <h3>Modelos No Compatibles:</h3>
+      <ul>
+        <li>❌ SM-A107F/DS</li>
+        <li>❌ SM-A025M/DS</li>
+        <li>❌ SM-A042M/DS</li>
+        <li>❌ SM-A045M/DS</li>
+        <li>❌ SM-S146VL/DS</li>
+        <li>❌ SM-A226BR/N</li>
+        <li>❌ SM-A025U/DS</li>
+        <li>❌ SM-A037M/A037F/DS</li>
+        <li>❌ SM-S135DL</li>
+        <li>❌ SM-A015M</li>
+        <li>❌ SM-A207M/DS</li>
+        <li>❌ SM-A145M/DS y todas las series A145</li>
+        <li>❌ SM-A146M/DS</li>
+        <li>❌ SM-A057M/G/D/S</li>
+        <li>❌ SM-A055M</li>
+        <li>❌ SM-A055F</li>
+      </ul>
+      <p><strong>SI SOPORTA EQUIPOS CON REPORTE DE ROBO, KNOX, PAYJOY, KG.</strong></p>
     `,
-    processTime: "⏰ Tiempo de proceso: 48-72 horas (días hábiles).",
+    processTime: "⏰ Tiempo de proceso: 1-5 minutos .",
     fields: [
-      { type: "text", label: "IMEI del dispositivo", placeholder: "Ej: 123456789012345" },
+      { type: "text", label: "IMEI o SN del dispositivo", placeholder: "Ej: 123456789012345" },
       { type: "select", label: "Moneda", options: ["USDT", "MXN", "GTQ"] },
     ],
-    price: { USDT: 50, MXN: 1000, GTQ: 400 },
+    price: { USDT: 15, MXN: 250, GTQ: 100 },
   },
   "Network Unlock": {
     description: "Desbloqueo de red",
