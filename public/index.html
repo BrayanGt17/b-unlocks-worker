@@ -7,56 +7,85 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+  <!-- Menú de Navegación -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <!-- Formulario de Orden -->
-    <div id="order-section" class="container">
-      <img src="https://i.ibb.co/C32CVsp1/unlocks.png" alt="B-Unlocks Logo" class="logo">
-      <h1>Servicios</h1>
-
-      <!-- Lista de precios -->
-      <div class="price-list">
-        <h2>Estado de Servicios</h2>
-        <ul>
-          <li><strong>FRP Samsung By IMEI S1</strong>: ON🟢</li>
-          <li><strong>FRP Samsung By IMEI S2</strong>: ON🟢</li>
-          <li><strong>FRP Xiaomi USB</strong>: ON🟢</li>
-        </ul>
+    <!-- Sección de Inicio -->
+    <section id="inicio">
+      <div class="container">
+        <img src="https://i.ibb.co/C32CVsp1/unlocks.png" alt="B-Unlocks Logo" class="logo">
+        <h1>Bienvenido a B-UNLOCKS</h1>
+        <p>Selecciona "Servicios" en el menú para ver nuestras opciones.</p>
       </div>
+    </section>
 
-      <form id="order-form">
-        <!-- Selección de servicio -->
-        <div class="input-group">
-          <label for="service">Selecciona un servicio:</label>
-          <select id="service" required>
-            <option value="" disabled selected>Elige un servicio</option>
-            <option value="Unlock Tool">Unlock Tool</option>
-            <option value="Android Multi Tool">Android Multi Tool</option>
-            <option value="FRP Samsung By IMEI">FRP Samsung By IMEI S1</option>
-            <option value="FRP Sam2">FRP Samsung By IMEI S2</option>
-            <option value="FRP XIAOMI">FRP Xiaomi USB</option>
-          </select>
+    <!-- Sección de Servicios -->
+    <section id="servicios" style="display: none;">
+      <div class="container">
+        <h1>Servicios</h1>
+
+        <!-- Lista de precios -->
+        <div class="price-list">
+          <h2>Estado de Servicios</h2>
+          <ul>
+            <li><strong>FRP Samsung By IMEI S1</strong>: ON🟢</li>
+            <li><strong>FRP Samsung By IMEI S2</strong>: ON🟢</li>
+            <li><strong>FRP Xiaomi USB</strong>: ON🟢</li>
+          </ul>
         </div>
 
-        <!-- Detalles del servicio -->
-        <div id="service-details">
-          <!-- Los detalles se cargarán dinámicamente según el servicio seleccionado -->
-        </div>
+        <!-- Formulario de Orden -->
+        <form id="order-form">
+          <!-- Selección de servicio -->
+          <div class="input-group">
+            <label for="service">Selecciona un servicio:</label>
+            <select id="service" required>
+              <option value="" disabled selected>Elige un servicio</option>
+              <option value="Unlock Tool">Unlock Tool</option>
+              <option value="Android Multi Tool">Android Multi Tool</option>
+              <option value="FRP Samsung By IMEI">FRP Samsung By IMEI S1</option>
+              <option value="FRP Sam2">FRP Samsung By IMEI S2</option>
+              <option value="FRP XIAOMI">FRP Xiaomi USB</option>
+            </select>
+          </div>
 
-        <!-- Tiempo de proceso -->
-        <div id="process-time" class="process-time">
-          <!-- El tiempo de proceso se cargará dinámicamente -->
-        </div>
+          <!-- Detalles del servicio -->
+          <div id="service-details">
+            <!-- Los detalles se cargarán dinámicamente según el servicio seleccionado -->
+          </div>
 
-        <!-- Total a pagar -->
-        <div class="input-group">
-          <p><strong>Total a pagar: <span id="total">0</span></strong></p>
-        </div>
+          <!-- Tiempo de proceso -->
+          <div id="process-time" class="process-time">
+            <!-- El tiempo de proceso se cargará dinámicamente -->
+          </div>
 
-        <!-- Botón para proceder al pago -->
-        <button type="submit" class="btn">🛒 Ordenar para proceder al pago</button>
-      </form>
-    </div>
+          <!-- Total a pagar -->
+          <div class="input-group">
+            <p><strong>Total a pagar: <span id="total">0</span></strong></p>
+          </div>
+
+          <!-- Botón para proceder al pago -->
+          <button type="submit" class="btn">🛒 Ordenar para proceder al pago</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" style="display: none;">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p>Ponte en contacto con nosotros para más información.</p>
+      </div>
+    </section>
   </main>
+
   <script src="/script.js"></script>
 </body>
 </html>
