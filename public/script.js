@@ -21,7 +21,25 @@ const services = {
   },
   "Android Multi Tool": {
     description: "Créditos para Android Multi Tool",
-    instructions: "⚠️ Es necesario registrarse primero en la página oficial de <a href='https://androidmultitool.com' target='_blank'>androidmultitool.com</a>.",
+    instructions: `
+      <p><strong>NOTA: LOS CRÉDITOS NO SON REEMBOLSABLES.</strong></p>
+      <ol>
+        <li>Regístrate en <a href="https://androidmultitool.com" target="_blank">Androidmultitool.com</a> antes de ordenar.</li>
+        <li>El pedido se realiza con el correo electrónico registrado en el sitio web.</li>
+        <li>Activa tu licencia con los créditos adquiridos.</li>
+        <li>Opciones de licencia:
+          <ul>
+            <li>10 Créditos / 3 Meses</li>
+            <li>18 Créditos / 6 Meses</li>
+            <li>30 Créditos / 12 Meses</li>
+          </ul>
+        </li>
+      </ol>
+      <h3>Modelos Compatibles:</h3>
+      <p>
+        <a href="https://androidmultitool.com/supported_models/" target="_blank">Ver modelos compatibles</a>
+      </p>
+    `,
     processTime: "⏰ Tiempo de proceso: 12-24 horas (días hábiles).",
     fields: [
       { type: "email", label: "Correo registrado", placeholder: "ejemplo@correo.com" },
@@ -32,8 +50,35 @@ const services = {
   },
   "FRP Samsung By IMEI": {
     description: "Desbloqueo FRP Samsung por IMEI",
-    instructions: "⚠️ Antes de ordenar, realiza un <strong>Hard Reset</strong> y desconecta el dispositivo de Wi-Fi.",
-    processTime: "⏰ Tiempo de proceso: 1-2 horas (días hábiles).",
+    instructions: `
+      <p><strong>RECUERDE QUE NO ES NECESARIO CONECTARLO A LA PC.</strong></p>
+      <ol>
+        <li>Antes de ordenar, realiza un <strong>Hard Reset</strong> y desconecta el dispositivo de Wi-Fi.</li>
+        <li>Proporciona el IMEI o SN del dispositivo.</li>
+        <li>Verifica bien el IMEI/SN Antes de ordenar.</li>
+      </ol>
+      <h3>Modelos No Compatibles:</h3>
+      <ul>
+        <li>❌ SM-A107F/DS</li>
+        <li>❌ SM-A025M/DS</li>
+        <li>❌ SM-A042M/DS</li>
+        <li>❌ SM-A045M/DS</li>
+        <li>❌ SM-S146VL/DS</li>
+        <li>❌ SM-A226BR/N</li>
+        <li>❌ SM-A025U/DS</li>
+        <li>❌ SM-A037M/A037F/DS</li>
+        <li>❌ SM-S135DL</li>
+        <li>❌ SM-A015M</li>
+        <li>❌ SM-A207M/DS</li>
+        <li>❌ SM-A145M/DS y todas las series A145</li>
+        <li>❌ SM-A146M/DS</li>
+        <li>❌ SM-A057M/G/D/S</li>
+        <li>❌ SM-A055M</li>
+        <li>❌ SM-A055F</li>
+      </ul>
+      <p><strong>NO SOPORTA EQUIPOS CON REPORTE DE ROBO, KNOX, PAYJOY, KG.</strong></p>
+    `,
+    processTime: "⏰ Tiempo de proceso: 1-5 minutos .",
     fields: [
       { type: "text", label: "IMEI o SN del dispositivo", placeholder: "Ej: 123456789012345" },
       { type: "select", label: "Moneda", options: ["USDT", "MXN", "GTQ"] },
@@ -42,7 +87,15 @@ const services = {
   },
   "iCloud Unlock": {
     description: "Desbloqueo de iCloud",
-    instructions: "⚠️ Proporciona el IMEI del dispositivo y asegúrate de que no esté en modo Lost.",
+    instructions: `
+      <p><strong>RECUERDE QUE NO ES NECESARIO CONECTARLO A LA PC.</strong></p>
+      <ol>
+        <li>Antes de ordenar, realiza un <strong>Hard Reset</strong> y desconecta el dispositivo de Wi-Fi.</li>
+        <li>Proporciona el IMEI del dispositivo.</li>
+        <li>Verifica bien el IMEI antes de ordenar.</li>
+      </ol>
+      <p><strong>NO SOPORTA EQUIPOS CON REPORTE DE ROBO, KNOX, PAYJOY, KG.</strong></p>
+    `,
     processTime: "⏰ Tiempo de proceso: 48-72 horas (días hábiles).",
     fields: [
       { type: "text", label: "IMEI del dispositivo", placeholder: "Ej: 123456789012345" },
@@ -84,7 +137,7 @@ serviceSelect.addEventListener("change", () => {
   serviceDetails.appendChild(description);
 
   // Mostrar indicaciones
-  const instructions = document.createElement("p");
+  const instructions = document.createElement("div");
   instructions.innerHTML = service.instructions;
   instructions.style.color = "#856404";
   instructions.style.backgroundColor = "#fff3cd";
