@@ -87,6 +87,16 @@ form {
   font-weight: bold;
 }
 
+.process-time {
+  background-color: #fff3cd; /* Fondo amarillo */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ffeeba;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
 /* Estilos para móviles */
 @media (max-width: 600px) {
   h1 {

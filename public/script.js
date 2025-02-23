@@ -1,8 +1,11 @@
-// Datos de los servicios con precios
+// Datos de los servicios con precios e indicaciones
 const services = {
   "Unlock Tool": {
     description: "Desbloqueo de dispositivos",
+    instructions: "⚠️ Es necesario registrarse primero en la página oficial de <a href='https://unlocktool.net' target='_blank'>unlocktool.net</a>.",
     fields: [
+      { type: "email", label: "Correo registrado", placeholder: "ejemplo@correo.com" },
+      { type: "text", label: "Usuario registrado", placeholder: "Tu usuario en Unlock Tool" },
       {
         type: "select",
         label: "Licencia",
@@ -17,6 +20,7 @@ const services = {
   },
   "Android Multi Tool": {
     description: "Créditos para Android Multi Tool",
+    instructions: "⚠️ Es necesario registrarse primero en la página oficial de <a href='https://androidmultitool.com' target='_blank'>androidmultitool.com</a>.",
     fields: [
       { type: "email", label: "Correo registrado", placeholder: "ejemplo@correo.com" },
       { type: "number", label: "Cantidad de créditos", placeholder: "Ej: 10", min: 1 },
@@ -26,6 +30,7 @@ const services = {
   },
   "FRP Samsung By IMEI": {
     description: "Desbloqueo FRP Samsung por IMEI",
+    instructions: "⚠️ Antes de ordenar, realiza un <strong>Hard Reset</strong> y desconecta el dispositivo de Wi-Fi.",
     fields: [
       { type: "text", label: "IMEI o SN del dispositivo", placeholder: "Ej: 123456789012345" },
       { type: "select", label: "Moneda", options: ["USDT", "MXN", "GTQ"] },
@@ -50,8 +55,18 @@ serviceSelect.addEventListener("change", () => {
 
   // Mostrar descripción del servicio
   const description = document.createElement("p");
-  description.textContent = service.description;
+  description.innerHTML = service.description;
   serviceDetails.appendChild(description);
+
+  // Mostrar indicaciones
+  const instructions = document.createElement("p");
+  instructions.innerHTML = service.instructions;
+  instructions.style.color = "#856404";
+  instructions.style.backgroundColor = "#fff3cd";
+  instructions.style.padding = "10px";
+  instructions.style.borderRadius = "5px";
+  instructions.style.border = "1px solid #ffeeba";
+  serviceDetails.appendChild(instructions);
 
   // Mostrar campos del servicio
   service.fields.forEach(field => {
@@ -97,7 +112,7 @@ function calculateTotal() {
     const licenseSelect = serviceDetails.querySelector("select");
     const currencySelect = serviceDetails.querySelectorAll("select")[1];
     if (licenseSelect && currencySelect) {
-      const selectedLicense = service.fields[0].options.find(
+      const selectedLicense = service.fields[2].options.find(
         opt => opt.text === licenseSelect.value
       );
       const currency = currencySelect.value;
