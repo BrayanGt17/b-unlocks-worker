@@ -85,7 +85,7 @@ const services = {
     ],
     price: { USDT: 10, MXN: 200, GTQ: 90 },
   },
-  "FRP sam2": {
+  "FRP Sam2": {
     description: "Desbloqueo FRP Samsung por IMEI",
     instructions: `
       <p><strong>RECUERDE QUE NO ES NECESARIO CONECTARLO A LA PC.</strong></p>
@@ -230,7 +230,7 @@ function calculateTotal() {
       const currency = currencySelect.value;
       total = credits * service.pricePerCredit[currency];
     }
-  } else if (selectedService === "FRP Samsung By IMEI" || selectedService === "iCloud Unlock" || selectedService === "Network Unlock") {
+  } else if (selectedService === "FRP Samsung By IMEI" || selectedService === "FRP Sam2" || selectedService === "Network Unlock") {
     const currencySelect = serviceDetails.querySelector("select");
     if (currencySelect) {
       const currency = currencySelect.value;
