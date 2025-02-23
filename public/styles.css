@@ -36,6 +36,33 @@ h1 {
   text-align: center;
 }
 
+.price-list {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.price-list h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.price-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.price-list li {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
 form {
   width: 100%;
   max-width: 500px;

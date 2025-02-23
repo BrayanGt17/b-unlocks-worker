@@ -40,6 +40,26 @@ const services = {
     ],
     price: { USDT: 10, MXN: 200, GTQ: 90 },
   },
+  "iCloud Unlock": {
+    description: "Desbloqueo de iCloud",
+    instructions: "⚠️ Proporciona el IMEI del dispositivo y asegúrate de que no esté en modo Lost.",
+    processTime: "⏰ Tiempo de proceso: 48-72 horas (días hábiles).",
+    fields: [
+      { type: "text", label: "IMEI del dispositivo", placeholder: "Ej: 123456789012345" },
+      { type: "select", label: "Moneda", options: ["USDT", "MXN", "GTQ"] },
+    ],
+    price: { USDT: 50, MXN: 1000, GTQ: 400 },
+  },
+  "Network Unlock": {
+    description: "Desbloqueo de red",
+    instructions: "⚠️ Proporciona el IMEI del dispositivo y la red actual.",
+    processTime: "⏰ Tiempo de proceso: 24-48 horas (días hábiles).",
+    fields: [
+      { type: "text", label: "IMEI del dispositivo", placeholder: "Ej: 123456789012345" },
+      { type: "select", label: "Moneda", options: ["USDT", "MXN", "GTQ"] },
+    ],
+    price: { USDT: 15, MXN: 300, GTQ: 120 },
+  },
 };
 
 // Seleccionar elementos
@@ -138,7 +158,7 @@ function calculateTotal() {
       const currency = currencySelect.value;
       total = credits * service.pricePerCredit[currency];
     }
-  } else if (selectedService === "FRP Samsung By IMEI") {
+  } else if (selectedService === "FRP Samsung By IMEI" || selectedService === "iCloud Unlock" || selectedService === "Network Unlock") {
     const currencySelect = serviceDetails.querySelector("select");
     if (currencySelect) {
       const currency = currencySelect.value;
