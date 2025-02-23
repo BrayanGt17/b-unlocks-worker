@@ -1,3 +1,21 @@
+// Seleccionar elementos
+const amtTable = document.getElementById("amt-table");
+const frpTable = document.getElementById("frp-table");
+const amtSection = document.getElementById("amt-section");
+const frpSection = document.getElementById("frp-section");
+
+// Mostrar sección de Android Multi Tool
+amtTable.addEventListener("click", () => {
+  amtSection.style.display = "block";
+  frpSection.style.display = "none"; // Ocultar la otra sección
+});
+
+// Mostrar sección de FRP Samsung By IMEI
+frpTable.addEventListener("click", () => {
+  frpSection.style.display = "block";
+  amtSection.style.display = "none"; // Ocultar la otra sección
+});
+
 // Calcular el total a pagar para AMT
 const creditsInput = document.getElementById("credits");
 const currencySelect = document.getElementById("currency");
