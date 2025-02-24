@@ -1,6 +1,6 @@
 /* Estilos base */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
@@ -59,7 +59,7 @@ main {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #333;
   margin: 20px 0;
   text-align: center;
@@ -76,7 +76,7 @@ h1 {
 }
 
 .price-list h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #333;
   margin-bottom: 10px;
 }
@@ -88,7 +88,7 @@ h1 {
 
 .price-list li {
   margin: 10px 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #555;
 }
 
@@ -157,7 +157,7 @@ form {
 /* Estilos para móviles */
 @media (max-width: 600px) {
   h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .btn {
     font-size: 1rem;
