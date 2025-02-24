@@ -285,7 +285,14 @@ orderForm.addEventListener("submit", (e) => {
     const value = input.value;
     message += `- ${label}: ${value}\n`;
   });
-
+  function validateForm() {
+    const service = document.getElementById('service').value;
+    if (!service) {
+      alert('Por favor, selecciona un servicio.');
+      return false;
+    }
+    return true;
+  }
   // Agregar el total a pagar
   message += `- Total a pagar: ${totalDisplay.textContent}\n`;
 

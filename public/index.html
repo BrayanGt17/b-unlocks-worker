@@ -49,7 +49,7 @@
         </div>
 
         <!-- Formulario de Orden -->
-        <form id="order-form">
+        <form id="order-form" onsubmit="return validateForm()">
           <!-- Selección de servicio -->
           <div class="input-group">
             <label for="service">Selecciona un servicio:</label>
@@ -79,7 +79,7 @@
           </div>
 
           <!-- Botón para proceder al pago -->
-          <button type="submit" class="btn">🛒 Ordenar para proceder al pago</button>
+          <button type="submit" class="btn" aria-label="Ordenar para proceder al pago">🛒 Ordenar para proceder al pago</button>
         </form>
       </div>
     </section>
