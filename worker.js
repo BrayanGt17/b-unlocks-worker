@@ -21,31 +21,6 @@ async function handleRequest(request) {
     return new Response(await js.text(), {
       headers: { "Content-Type": "application/javascript" },
     });
-  } else if (url.pathname === "/favicon-96x96.png") {
-    const png = await fetch("https://raw.githubusercontent.com/BrayanGt17/b-unlocks-worker/main/public/favicon-96x96.png");
-    return new Response(await png.arrayBuffer(), {
-      headers: { "Content-Type": "image/png" },
-    });
-  } else if (url.pathname === "/favicon.svg") {
-    const svg = await fetch("https://raw.githubusercontent.com/BrayanGt17/b-unlocks-worker/main/public/favicon.svg");
-    return new Response(await svg.text(), {
-      headers: { "Content-Type": "image/svg+xml" },
-    });
-  } else if (url.pathname === "/favicon.ico") {
-    const ico = await fetch("https://raw.githubusercontent.com/BrayanGt17/b-unlocks-worker/main/public/favicon.ico");
-    return new Response(await ico.arrayBuffer(), {
-      headers: { "Content-Type": "image/x-icon" },
-    });
-  } else if (url.pathname === "/apple-touch-icon.png") {
-    const appleIcon = await fetch("https://raw.githubusercontent.com/BrayanGt17/b-unlocks-worker/main/public/apple-touch-icon.png");
-    return new Response(await appleIcon.arrayBuffer(), {
-      headers: { "Content-Type": "image/png" },
-    });
-  } else if (url.pathname === "/site.webmanifest") {
-    const manifest = await fetch("https://raw.githubusercontent.com/BrayanGt17/b-unlocks-worker/main/public/site.webmanifest");
-    return new Response(await manifest.text(), {
-      headers: { "Content-Type": "application/manifest+json" },
-    });
   }
 
   return new Response("Página no encontrada", { status: 404 });
