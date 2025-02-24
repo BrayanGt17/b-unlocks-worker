@@ -140,7 +140,10 @@ const serviceDetails = document.getElementById("service-details");
 const processTime = document.getElementById("process-time");
 const orderForm = document.getElementById("order-form");
 const totalDisplay = document.getElementById("total");
-
+// Ocultar elementos inicialmente
+totalContainer.classList.add("hidden");
+processTime.classList.add("hidden");
+submitButton.classList.add("hidden");
 // Mostrar la sección de servicios al hacer clic en "Servicios" en el menú
 document.querySelector('a[href="#servicios"]').addEventListener('click', (e) => {
   e.preventDefault(); // Evita el comportamiento predeterminado del enlace
@@ -227,7 +230,10 @@ serviceSelect.addEventListener("change", () => {
     inputGroup.appendChild(input);
     serviceDetails.appendChild(inputGroup);
   });
-
+ // Mostrar elementos ocultos
+ totalContainer.classList.remove("hidden");
+ processTime.classList.remove("hidden");
+ submitButton.classList.remove("hidden");
   // Calcular el total inicial
   calculateTotal();
 });
